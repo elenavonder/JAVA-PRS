@@ -45,6 +45,7 @@ public class ProductController {
 			return JsonResponse.getErrorInstance("Exception:"+ex.getMessage(), ex);
 		}
 	}
+	
 	private JsonResponse save(Product product) {
 		try {
 			Product prod = productRepository.save(product);
@@ -53,6 +54,7 @@ public class ProductController {
 			return JsonResponse.getErrorInstance(ex, ex.getMessage());
 		}
 	}
+	
 	@PostMapping(path="")
 	public @ResponseBody JsonResponse Insert(@RequestBody Product product) {
 		return save(product);
